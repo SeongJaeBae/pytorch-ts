@@ -252,5 +252,5 @@ class TimeGradEstimator(PyTorchEstimator):
             batch_size=self.trainer.batch_size,
             freq=self.freq,
             prediction_length=self.prediction_length,
-            device=device,
+            device="cuda" if torch.cuda.is_available() else "CPU",
         )
